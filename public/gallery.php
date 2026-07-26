@@ -1,23 +1,35 @@
 <?php require_once 'header.php' ?>
 
 <style>
+/* Gallery Page Styles */
 .gallery {
-  margin-top: 30px;
-  margin-bottom: 30px;
+  padding: 100px 0;
+  background: var(--white);
 }
 .gallery .card {
-  margin-top: 20px;
-  margin-bottom: 10px;
-  border-radius: 30px;
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  border-radius: var(--border-radius);
+  border: none;
+  box-shadow: var(--shadow-md);
+  overflow: hidden;
+  transition: var(--transition);
+  margin-bottom: 30px;
   cursor: pointer;
 }
-.gallery .card img {
-  border-radius: 20px;
-  transition: 0.5s;
+.gallery .card:hover {
+  transform: translateY(-10px);
+  box-shadow: var(--shadow-lg);
 }
-.gallery .card img:hover {
-  transform: scale(1.1);
+.gallery .card-body-img {
+    height: 300px;
+}
+.gallery .card-body-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: var(--transition);
+}
+.gallery .card:hover .card-body-img img {
+  transform: scale(1.08);
 }
 </style>
 

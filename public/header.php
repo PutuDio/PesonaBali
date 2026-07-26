@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"/>
     <link rel="preconnect" href="https://fonts.googleapis.com"/>
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
     <link rel="shortcut icon" href="../img/PesonaBali.png" type="image/x-icon">
     <link rel="stylesheet" href="../css/public-style.css"/>
     <link rel="stylesheet" href="../img/">
@@ -44,6 +44,9 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="gallery.php">Gallery</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link menu-guide" href="guide.php">Guides</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link menu-book" href="book.php">Book</a>

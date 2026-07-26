@@ -7,7 +7,11 @@ $tanggal = isset($_GET['tanggal']) ? mysqli_real_escape_string($conn, $_GET['tan
 $bulan = isset($_GET['bulan']) ? mysqli_real_escape_string($conn, $_GET['bulan']) : '';
 $tahun = isset($_GET['tahun']) ? mysqli_real_escape_string($conn, $_GET['tahun']) : '';
 
-$sql = "SELECT * FROM book WHERE 1=1";
+$sql = "SELECT book.*, tb_paket.nama_paket, tb_guide.nama_guide 
+        FROM book 
+        LEFT JOIN tb_paket ON book.id_paket = tb_paket.id_paket 
+        LEFT JOIN tb_guide ON book.id_guide = tb_guide.id_guide 
+        WHERE 1=1";
 
 if ($tanggal != '') {
     $sql .= " AND arrivals = '$tanggal'";
@@ -77,7 +81,8 @@ if ($result) {
                         <th class="text-center">Email</th>
                         <th class="text-center">Phone</th>
                         <th class="text-center">Address</th>
-                        <th class="text-center">Location</th>
+                        <th class="text-center">Location/Package</th>
+                        <th class="text-center">Guide</th>
                         <th class="text-center">Guest</th>
                         <th class="text-center">Arrivals</th>
                         <th class="text-center">Leaving</th>
@@ -93,7 +98,10 @@ if ($result) {
                                 echo '<td>'.$row['email'].'</td>';
                                 echo '<td>'.$row['phone'].'</td>';
                                 echo '<td>'.$row['address'].'</td>';
-                                echo '<td>'.$row['location'].'</td>';
+                                $loc = !empty($row['nama_paket']) ? $row['nama_paket'] : $row['location'];
+                                echo '<td>'.$loc.'</td>';
+                                $guideName = !empty($row['nama_guide']) ? $row['nama_guide'] : '-';
+                                echo '<td>'.$guideName.'</td>';
                                 echo '<td>'.$row['guest'].'</td>';
                                 echo '<td>'.$row['arrivals'].'</td>';
                                 echo '<td>'.$row['leaving'].'</td>';

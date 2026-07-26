@@ -1,44 +1,20 @@
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap'); /* Import font Poppins dari Google Fonts */
-body{
-	line-height: 1.5;
-	font-family: 'Poppins', sans-serif;
-}
-
-*{
-	margin:0;
-	padding:0;
-	box-sizing: border-box;
-}
-
-.container{
-	max-width: 1170px;
-	margin:auto;
-}
-
-.row{
-	display: flex;
-	flex-wrap: wrap;
-}
-
-ul{
-	list-style: none;
-}
-
+/* You can also move this to public-style.css, but I'll keep it here for simplicity if the user had it here */
 .footer{
-	background-color: #24262b;
+	background-color: var(--dark-color);
     padding: 70px 0;
+    margin-top: auto;
 }
 .footer-col{
 	width: 25%;
 	padding: 0 15px;
 }
 .footer-col h4{
-	font-size: 18px;
-	color: #ffffff;
+	font-size: 20px;
+	color: var(--white);
 	text-transform: capitalize;
 	margin-bottom: 35px;
-	font-weight: 500;
+	font-weight: 600;
 	position: relative;
 }
 .footer-col h4::before{
@@ -46,8 +22,9 @@ ul{
 	position: absolute;
 	left:0;
 	bottom: -10px;
-	background-color: #e91e63;
-	height: 2px;
+	background-color: var(--primary-color);
+	height: 3px;
+    border-radius: 2px;
 	box-sizing: border-box;
 	width: 50px;
 }
@@ -57,15 +34,14 @@ ul{
 .footer-col ul li a{
 	font-size: 16px;
 	text-transform: capitalize;
-	color: #ffffff;
+	color: #bbbbbb;
 	text-decoration: none;
 	font-weight: 300;
-	color: #bbbbbb;
 	display: block;
-	transition: all 0.3s ease;
+	transition: var(--transition);
 }
 .footer-col ul li a:hover{
-	color: #ffffff;
+	color: var(--primary-color);
 	padding-left: 8px;
 }
 .footer-col .social-links {
@@ -73,40 +49,37 @@ ul{
 	align-items: center; 
 }
 .footer-col .social-links a {
-	margin: 0 30px 30px 0;
+	margin: 0 15px 15px 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 45px;
+    width: 45px;
+    background-color: rgba(255,255,255,0.05);
+    border-radius: 50%;
+    color: var(--white);
+    transition: var(--transition);
 }
 .footer-col .social-links i {
-  	font-size: 30px; /* Adjust the size as needed */
-	color: #ffffff;
-	transition: all 0.7s ease;
+  	font-size: 20px;
 }
-.footer-col .social-links a:hover i {
-    display: inline-block;
-	height: 40px;
-	width: 40px;
-	background-color: rgba(255,255,255,0.2);
-	margin:0 10px 10px 0;
-	text-align: center;
-	line-height: 40px;
-	border-radius: 50%;
-	color: #ffffff;
-	transition: all 0.7s ease;
+.footer-col .social-links a:hover {
+	background-color: var(--primary-color);
+    transform: translateY(-5px);
 }
 
 @media(max-width: 767px){
 	.footer-col{
-    width: 50%;
-    margin-bottom: 30px;
-}
+        width: 50%;
+        margin-bottom: 30px;
+    }
 }
 @media(max-width: 574px){
 	.footer-col{
-    width: 100%;
+        width: 100%;
+    }
 }
-}
-
 </style>
-
 
 <footer class="footer">
     <div class="container">
@@ -115,8 +88,8 @@ ul{
             <div class="footer-col">
                 <h4>Contact Us</h4>
     			<ul>
-                    <li><a href="#">Email : dioputu04@gmail.com </a></li>
-    				<li><a href="#">Phone : +6281337366864 </a></li>
+                    <li><a href="mailto:dioputu04@gmail.com">Email : dioputu04@gmail.com </a></li>
+    				<li><a href="tel:+6281337366864">Phone : +6281337366864 </a></li>
                 </ul>
             </div>
 
@@ -133,7 +106,7 @@ ul{
             <div class="footer-col">
                 <h4>About</h4>
                 <ul>
-                    <li><a href="index.php #about">About Bali</a></li>
+                    <li><a href="index.php#about">About Bali</a></li>
                     <li><a href="#">Privacy Policy</a></li>
                 </ul>
             </div>
@@ -151,7 +124,6 @@ ul{
     	</div>
     </div>
 </footer>
-
 
 	<!-- Script untuk Bootstrap -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"

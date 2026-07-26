@@ -48,6 +48,12 @@
                                     <a class="nav-link menu-gallery" href="gallery.php">Gallery</a>
                                 </li>
                                 <li class="nav-item">
+                                    <a class="nav-link menu-paket" href="paket.php">Packages</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link menu-guide" href="guide.php">Guides</a>
+                                </li>
+                                <li class="nav-item">
                                     <a class="nav-link menu-booking" href="book.php">Booking List</a>
                                 </li>
                             </ul>

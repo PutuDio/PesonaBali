@@ -1,3 +1,17 @@
+:root {
+  --primary-color: #FF7A00;
+  --primary-hover: #e06c00;
+  --dark-color: #1a1a2e;
+  --light-gray: #f8f9fa;
+  --text-gray: #6c757d;
+  --white: #ffffff;
+  --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  --shadow-sm: 0 4px 6px rgba(0,0,0,0.05);
+  --shadow-md: 0 10px 20px rgba(0,0,0,0.08);
+  --shadow-lg: 0 20px 40px rgba(0,0,0,0.12);
+  --border-radius: 16px;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -5,204 +19,256 @@
   text-decoration: none;
   list-style: none;
   scroll-behavior: smooth;
-  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-family: 'Outfit', sans-serif;
 }
 
-#navbar {
-  background: #f9f9f9;
+body {
+  background-color: var(--white);
+  color: var(--dark-color);
 }
+
+/* Navbar */
+#navbar {
+  background: rgba(255, 255, 255, 0.9) !important;
+  backdrop-filter: blur(10px);
+  box-shadow: var(--shadow-sm);
+  padding: 15px 0;
+  transition: var(--transition);
+}
+
 #logo {
-  font-size: 36px;
-  font-weight: 700;
-  color: black;
-  text-shadow: 0px 1px 1px black;
-  margin-bottom: 5px;
+  font-size: 32px;
+  font-weight: 800;
+  color: var(--dark-color);
+  letter-spacing: -0.5px;
 }
 #logo span {
-  color: #ffa500;
-}
-
-.navbar-toggler span {
-  color: #ffa500;
+  color: var(--primary-color);
 }
 
 .navbar-nav {
   margin-left: 20px;
+  gap: 10px;
 }
 
 .nav-item .nav-link {
   font-size: 16px;
-  font-weight: 550;
-  color: black;
-  letter-spacing: 1px;
-  border-radius: 3px;
-  transition: 0.5s ease;
+  font-weight: 500;
+  color: var(--dark-color) !important;
+  border-radius: 8px;
+  padding: 8px 16px !important;
+  transition: var(--transition);
 }
 
-.nav-item .nav-link:hover {
-  background: #ffa500;
-  color: white;
+.nav-item .nav-link:hover, .nav-item .nav-link.active {
+  color: var(--primary-color) !important;
+  background: rgba(255, 122, 0, 0.1);
 }
 
-#navbar form button {
-  background: #ffa500;
-  color: white;
-  border: none;
+.menu-book {
+  background: var(--primary-color) !important;
+  color: var(--white) !important;
+  border-radius: 30px !important;
+  padding: 10px 24px !important;
+  font-weight: 600 !important;
+  box-shadow: 0 4px 15px rgba(255, 122, 0, 0.3);
+}
+.menu-book:hover {
+  transform: translateY(-2px);
+  background: var(--primary-hover) !important;
+  box-shadow: 0 6px 20px rgba(255, 122, 0, 0.4);
 }
 
+/* Hero Section */
 .home {
   width: 100%;
-  height: 100vh;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.2)),
+  min-height: 100vh;
+  background-image: linear-gradient(rgba(26, 26, 46, 0.4), rgba(26, 26, 46, 0.6)),
     url(../img/about.jpg);
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }
 
 .home .content {
-  text-align: center;
-  padding-top: 200px;
+  padding-top: 80px;
+  animation: fadeIn 1.5s ease-out;
 }
+
 .home .content h5 {
-  color: white;
-  font-size: 38px;
-  font-weight: 550;
-  text-shadow: 0px 1px 1px black;
+  color: var(--white);
+  font-size: 24px;
+  font-weight: 500;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 20px;
 }
+
 .home .content h1 {
-  color: white;
-  font-size: 70px;
-  font-weight: 550;
-  text-shadow: 0px 1px 1px black;
-  margin-top: 50px;
+  color: var(--white);
+  font-size: 72px;
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: 24px;
+  text-shadow: 0 4px 10px rgba(0,0,0,0.3);
 }
+
 .changecontent::after {
   content: " ";
-  color: #ffa500;
-  text-shadow: 0px 1px 1px black;
-  animation: changetext 10s infinite linear;
+  color: var(--primary-color);
+  animation: changetext 12s infinite linear;
 }
+
 @keyframes changetext {
-  0% {
-    content: "BESAKIH TEMPLE";
-  }
-  20% {
-    content: "DIAMOND BEACH";
-  }
-  40% {
-    content: "KUTA";
-  }
-  60% {
-    content: "NUSA PENIDA";
-  }
-  80% {
-    content: "MONKEY FOREST";
-  }
-  100% {
-    content: "GWK";
-  }
+  0% { content: "BESAKIH TEMPLE"; }
+  20% { content: "DIAMOND BEACH"; }
+  40% { content: "KUTA"; }
+  60% { content: "NUSA PENIDA"; }
+  80% { content: "MONKEY FOREST"; }
+  100% { content: "GWK"; }
 }
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
 .home .content p {
-  color: white;
-  font-size: 15px;
-  font-weight: 600;
-  text-shadow: 0px 1px 1px black;
-  margin-bottom: 30px;
-  margin-top: 5px;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 18px;
+  font-weight: 400;
+  margin-bottom: 40px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .home .content a {
-  padding: 10px;
-  background: white;
-  color: black;
-  letter-spacing: 2px;
-  font-weight: 550;
-  border-radius: 5px;
-  text-decoration: none;
-  transition: 0.5s;
+  padding: 16px 40px;
+  background: var(--primary-color);
+  color: var(--white);
+  font-size: 18px;
+  font-weight: 600;
+  border-radius: 50px;
+  transition: var(--transition);
+  box-shadow: 0 8px 25px rgba(255, 122, 0, 0.4);
+  display: inline-block;
 }
 
 .home .content a:hover {
-  background: #ffa500;
+  background: var(--primary-hover);
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px rgba(255, 122, 0, 0.5);
   color: white;
 }
 
-@media (max-widht: 850px) {
-  .home {
-    background-position: 50%;
-  }
-}
-@media (max-widht: 450px) {
-  .home .content h5 {
-    font-size: 25px;
-  }
-  .home .content h1 {
-    font-size: 38px;
-  }
-  .home .content p {
-    font-size: 13px;
-  }
+/* Common Section Styles */
+section {
+  padding: 100px 0;
 }
 
 .main-txt h1 {
   text-align: center;
-  text-shadow: 0px 1px 1px black;
-  font-weight: 600;
+  font-weight: 800;
+  font-size: 42px;
+  color: var(--dark-color);
+  margin-bottom: 50px;
+  position: relative;
 }
 .main-txt h1 span {
-  color: #ffa500;
+  color: var(--primary-color);
+}
+.main-txt h1::after {
+  content: '';
+  position: absolute;
+  width: 80px;
+  height: 4px;
+  background: var(--primary-color);
+  bottom: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 2px;
 }
 
+/* About Section */
 .about {
-  padding: 50px;
-  margin-top: 50px;
-  background: #f9f9f9;
+  background: var(--white);
 }
 .about .card {
-  border-radius: 10px;
+  border: none;
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
 }
 .about .card img {
-  border-radius: 10px;
+  width: 100%;
+  height: auto;
+  transition: var(--transition);
+}
+.about .card:hover img {
+  transform: scale(1.05);
 }
 .about h2 {
-  font-weight: 600;
-  letter-spacing: 1px;
+  font-weight: 700;
+  margin-bottom: 20px;
 }
 .about p {
-  font-weight: 500;
-}
-#about-btn {
-  width: 150px;
-  height: 38px;
-  border: none;
-  border-radius: 5px;
-  background: #ffa500;
-  color: white;
-  letter-spacing: 2px;
-  font-weight: 550;
-  transition: 0.5s ease;
-  cursor: pointer;
-}
-#about-btn:hover {
-  width: 170px;
+  color: var(--text-gray);
+  line-height: 1.8;
+  font-size: 16px;
+  margin-bottom: 20px;
 }
 
+/* Services Section */
 .services {
-  background: #f9f9f9;
-  margin-top: 50px;
+  background: var(--light-gray);
 }
 .services .card {
-  box-shadow: 0px 5px 5px -6px black;
+  background: var(--white);
   border: none;
-  cursor: pointer;
+  border-radius: var(--border-radius);
+  padding: 40px 20px;
+  transition: var(--transition);
+  box-shadow: var(--shadow-sm);
+  height: 100%;
+  text-align: center;
+}
+.services .card:hover {
+  transform: translateY(-10px);
+  box-shadow: var(--shadow-lg);
 }
 .services .card i {
-  font-size: 80px;
-  text-align: center;
-  color: #ffa500;
-  margin-top: 20px;
+  font-size: 60px;
+  color: var(--primary-color);
+  margin-bottom: 25px;
+  display: inline-block;
+  transition: var(--transition);
+}
+.services .card:hover i {
+  transform: scale(1.1);
+}
+.services .card .card-body {
+  padding: 0;
 }
 .services .card .card-body h3 {
-  font-weight: 600;
+  font-weight: 700;
+  font-size: 22px;
+  margin-bottom: 15px;
+}
+.services .card .card-body p {
+  color: var(--text-gray);
+  font-size: 15px;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+  .home .content h1 { font-size: 48px; }
+  .home .content h5 { font-size: 18px; }
+  section { padding: 60px 0; }
+  .main-txt h1 { font-size: 32px; }
 }

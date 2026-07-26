@@ -1,10 +1,6 @@
 <?php require_once 'header.php' ?>
-<style>
-        body {
-            height: 1500px;
-            margin: 0;
-            font-family: Arial, sans-serif;
-        }
+    <style>
+        /* Scroll buttons styles */
 
         #scrollToTopBtn, #scrollToBottomBtn {
             display: none;
