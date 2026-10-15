@@ -12,7 +12,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
     <link rel="shortcut icon" href="../img/PesonaBali.png" type="image/x-icon">
     <link rel="stylesheet" href="../css/public-style.css"/>
-    <link rel="stylesheet" href="../img/">
 </head>
 <body>
     <nav class="navbar navbar-expand-lg sticky-top" id="navbar">
@@ -29,27 +28,39 @@
                 <ul class="navbar-nav me-auto">
                     <li class="nav-item">
                         <div class="dropdown">
-                            <button class="btn dropdown-toggle nav-link" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                Home
+                            <button id="homeDropdown"
+                                    class="btn dropdown-toggle nav-link"
+                                    type="button"
+                                    data-bs-toggle="dropdown"
+                                    aria-expanded="false">
+               					Home
                             </button>
-                            <ul class="dropdown-menu">
-                                <li><a class="nav-link dropdown-item" href="index.php #home">Home</a></li>
-                                <li><a class="nav-link dropdown-item" href="index.php #about">About</a></li>
-                                <li><a class="nav-link dropdown-item" href="index.php #services">Services</a></li>
+    						<ul class="dropdown-menu">
+                                <li><a class="nav-link dropdown-item" href="index.php#home">Home</a></li>
+                                <li><a class="nav-link dropdown-item" href="index.php#about">About</a></li>
+                                <li><a class="nav-link dropdown-item" href="index.php#services">Services</a></li>
                             </ul>
                         </div>
                     </li>
+
                     <li class="nav-item">
-                        <a class="nav-link" href="destinasi.php">Destination</a>
+                        <a class="nav-link <?= ($page=='destination') ? 'active' : '' ?>"
+                           href="destinasi.php">Destination</a>
                     </li>
+
                     <li class="nav-item">
-                        <a class="nav-link" href="gallery.php">Gallery</a>
+                        <a class="nav-link <?= ($page=='gallery') ? 'active' : '' ?>"
+                           href="gallery.php">Gallery</a>
                     </li>
+
                     <li class="nav-item">
-                        <a class="nav-link menu-guide" href="guide.php">Guides</a>
+                        <a class="nav-link <?= ($page=='guide') ? 'active' : '' ?>"
+                           href="guide.php">Guides</a>
                     </li>
+
                     <li class="nav-item">
-                        <a class="nav-link menu-book" href="book.php">Book</a>
+                        <a class="nav-link <?= ($page=='book') ? 'active' : '' ?>"
+                           href="book.php">Book</a>
                     </li>
                 </ul>
             </div>

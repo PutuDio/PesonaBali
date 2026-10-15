@@ -1,4 +1,7 @@
-<?php require_once 'header.php' ?>
+<?php
+$page = "home";
+require_once 'header.php';
+?>
 
 
     <div class="home" id="home">
@@ -19,7 +22,7 @@
         <div class="row" style="margin-top: 50px">
           <div class="col-md-6 py-3 py-md-0">
             <div class="card">
-              <img src="../img/gambar4.jpg" alt="" />
+              <img src="../img/Bali (2).jpg" alt="" />
             </div>
           </div>
           <div class="col-md-6 py-3 py-md-0">

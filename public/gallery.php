@@ -1,4 +1,7 @@
-<?php require_once 'header.php' ?>
+<?php
+$page = "gallery";
+require_once 'header.php';
+?>
 
 <style>
 /* Gallery Page Styles */

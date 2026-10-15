@@ -1,4 +1,7 @@
-<?php require_once 'header.php' ?>
+<?php
+$page = "guide";
+require_once 'header.php';
+?>
 
 <style>
 /* Guide Page Styles */

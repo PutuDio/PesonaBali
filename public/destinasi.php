@@ -1,4 +1,7 @@
-<?php require_once 'header.php' ?>
+<?php
+$page = "destination";
+require_once 'header.php';
+?>
 
 <style>
 /* Destination Page Styles */

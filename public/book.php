@@ -2,6 +2,7 @@
 
 
 // Menyertakan file header dan koneksi database
+$page = "book";
 require_once 'header.php';
 require_once '../include/koneksi.php';
 

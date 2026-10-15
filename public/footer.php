@@ -80,7 +80,7 @@
     }
 }
 </style>
-
+    
 <footer class="footer">
     <div class="container">
     	<div class="row">
@@ -128,5 +128,46 @@
 	<!-- Script untuk Bootstrap -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+
+            const dropdown =
+                document.getElementById("homeDropdown");
+
+            function activateDropdown() {
+
+                dropdown.classList.remove("active");
+
+                let scrollPos = window.scrollY + 200;
+
+                if (
+                    scrollPos >= about.offsetTop &&
+                    scrollPos < services.offsetTop
+                ) {
+
+                    dropdown.innerHTML = "About";
+                    dropdown.classList.add("active");
+
+                }
+                else if (
+                    scrollPos >= services.offsetTop
+                ) {
+
+                    dropdown.innerHTML = "Services";
+                    dropdown.classList.add("active");
+
+                }
+                else {
+
+                    dropdown.innerHTML = "Home";
+                    dropdown.classList.add("active");
+
+                }
+            }
+
+            window.addEventListener("scroll", activateDropdown);
+            activateDropdown();
+        });
+        </script>
 </body>
 </html>
